@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Toilet:</strong>
+  <%= @amenity.toilet %>
+</p>
+
+<p>
+  <strong>Bath:</strong>
+  <%= @amenity.bath %>
+</p>
+
+<p>
+  <strong>Shower:</strong>
+  <%= @amenity.shower %>
+</p>
+
+<p>
+  <strong>Baby:</strong>
+  <%= @amenity.baby %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @amenity.location_id %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @amenity.rating %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @amenity.price %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @amenity.image %>
+</p>
+
+<%= link_to 'Edit', edit_amenity_path(@amenity) %> |
+<%= link_to 'Back', amenities_path %>

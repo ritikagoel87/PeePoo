@@ -1,0 +1,304 @@
+  [1m[35m (365.4ms)[0m  [1m[35mCREATE DATABASE "peePooRails_development" ENCODING = 'unicode'[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (288.3ms)[0m  [1m[35mCREATE DATABASE "peePooRails_test" ENCODING = 'unicode'[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (53.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(234706761968621040)[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUsers (20190513002159)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "fname" text, "lname" text, "email" text, "password_digest" text, "admin" boolean, "owner" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190513002159_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (2.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190513002159"]]
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateLocations (20190513004040)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "locations" ("id" bigserial primary key, "suburb" text, "street" text, "house" text, "typeOfHouse" text, "description" text, "availableFrom" time, "availableTo" time, "availability" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190513004040_create_locations.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190513004040"]]
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateAmenities (20190513004913)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "amenities" ("id" bigserial primary key, "toilet" integer, "bath" integer, "shower" integer, "baby" integer, "location_id" integer, "rating" integer, "price" float, "image" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190513004913_create_amenities.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190513004913"]]
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateBookings (20190513011250)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "bookings" ("id" bigserial primary key, "timeIn" time, "timeOut" time, "amount" float, "amenities_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190513011250_create_bookings.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190513011250"]]
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Create (2.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-05-13 01:14:08.465473"], ["updated_at", "2019-05-13 01:14:08.465473"]]
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(234706761968621040)[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ritikagoel/.rvm/gems/ruby-2.6.2/bin/annotate:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(234706761968621040)[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddColumnUseridToLocations (20190513015148)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (4.7ms)[0m  [1m[35mALTER TABLE "locations" ADD "user_id" integer[0m
+  ↳ db/migrate/20190513015148_add_column_userid_to_locations.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190513015148"]]
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(234706761968621040)[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ritikagoel/.rvm/gems/ruby-2.6.2/bin/annotate:23
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("fname", "lname", "email", "password_digest", "admin", "owner", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["fname", "Patricia"], ["lname", "Nunes"], ["email", "pat@ga.co"], ["password_digest", "chicken"], ["admin", true], ["owner", true], ["created_at", "2019-05-13 02:23:50.075068"], ["updated_at", "2019-05-13 02:23:50.075068"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("fname", "lname", "email", "password_digest", "admin", "owner", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["fname", "Ritika"], ["lname", "Goel"], ["email", "rit@ga.co"], ["password_digest", "chicken"], ["admin", true], ["owner", true], ["created_at", "2019-05-13 02:23:50.079070"], ["updated_at", "2019-05-13 02:23:50.079070"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("fname", "lname", "email", "password_digest", "admin", "owner", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["fname", "Mila"], ["lname", "Svirina"], ["email", "mil@ga.co"], ["password_digest", "chicken"], ["admin", true], ["owner", true], ["created_at", "2019-05-13 02:23:50.081379"], ["updated_at", "2019-05-13 02:23:50.081379"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("fname", "lname", "email", "password_digest", "admin", "owner", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["fname", "Owner"], ["lname", "Owner"], ["email", "owner@ga.co"], ["password_digest", "chicken"], ["admin", false], ["owner", true], ["created_at", "2019-05-13 02:23:50.083724"], ["updated_at", "2019-05-13 02:23:50.083724"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("fname", "lname", "email", "password_digest", "admin", "owner", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["fname", "User"], ["lname", "User"], ["email", "user@ga.co"], ["password_digest", "chicken"], ["admin", false], ["owner", false], ["created_at", "2019-05-13 02:23:50.086038"], ["updated_at", "2019-05-13 02:23:50.086038"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (11.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[36mLocation Load (1.8ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mLocation Create (3.0ms)[0m  [1m[32mINSERT INTO "locations" ("suburb", "street", "house", "typeOfHouse", "description", "availableFrom", "availableTo", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["suburb", "Sydney"], ["street", "Market street"], ["house", "1/2"], ["typeOfHouse", "unit"], ["description", "Great and clean, please take the key from the reception"], ["availableFrom", "09:00:00"], ["availableTo", "17:00:00"], ["created_at", "2019-05-13 02:23:50.119813"], ["updated_at", "2019-05-13 02:23:50.119813"], ["user_id", 4]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mLocation Create (0.6ms)[0m  [1m[32mINSERT INTO "locations" ("suburb", "street", "house", "typeOfHouse", "description", "availableFrom", "availableTo", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["suburb", "Millers Point"], ["street", "Pottinger"], ["house", "1/103"], ["typeOfHouse", "unit"], ["description", "Great and clean, please take the key in the lock box"], ["availableFrom", "12:00:00"], ["availableTo", "17:00:00"], ["created_at", "2019-05-13 02:23:50.126024"], ["updated_at", "2019-05-13 02:23:50.126024"], ["user_id", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mLocation Create (0.6ms)[0m  [1m[32mINSERT INTO "locations" ("suburb", "street", "house", "typeOfHouse", "description", "availableFrom", "availableTo", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["suburb", "Sydney 2"], ["street", "Kent street"], ["house", "27"], ["typeOfHouse", "house"], ["description", "Great and clean, please take the key in the lock box"], ["availableFrom", "09:00:00"], ["availableTo", "11:00:00"], ["created_at", "2019-05-13 02:23:50.129271"], ["updated_at", "2019-05-13 02:23:50.129271"], ["user_id", 2]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[36mAmenity Load (0.9ms)[0m  [1m[34mSELECT "amenities".* FROM "amenities"[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mAmenity Create (1.2ms)[0m  [1m[32mINSERT INTO "amenities" ("toilet", "bath", "location_id", "rating", "price", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["toilet", 1], ["bath", 0], ["location_id", 1], ["rating", 4], ["price", 2.0], ["image", "https://st.hzcdn.com/simgs/4471eb2602556915_8-0659/eclectic-bathroom.jpg"], ["created_at", "2019-05-13 02:23:50.146050"], ["updated_at", "2019-05-13 02:23:50.146050"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mAmenity Create (0.6ms)[0m  [1m[32mINSERT INTO "amenities" ("toilet", "bath", "location_id", "rating", "price", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["toilet", 1], ["bath", 0], ["location_id", 1], ["rating", 4], ["price", 2.0], ["image", "https://st.hzcdn.com/simgs/4471eb2602556915_8-0659/eclectic-bathroom.jpg"], ["created_at", "2019-05-13 02:23:50.149470"], ["updated_at", "2019-05-13 02:23:50.149470"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mAmenity Create (0.5ms)[0m  [1m[32mINSERT INTO "amenities" ("toilet", "bath", "location_id", "rating", "price", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["toilet", 1], ["bath", 0], ["location_id", 1], ["rating", 4], ["price", 2.0], ["image", "https://st.hzcdn.com/simgs/4471eb2602556915_8-0659/eclectic-bathroom.jpg"], ["created_at", "2019-05-13 02:23:50.152522"], ["updated_at", "2019-05-13 02:23:50.152522"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mAmenity Create (0.4ms)[0m  [1m[32mINSERT INTO "amenities" ("toilet", "bath", "location_id", "rating", "price", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["toilet", 1], ["bath", 0], ["location_id", 1], ["rating", 4], ["price", 2.0], ["image", "https://st.hzcdn.com/simgs/4471eb2602556915_8-0659/eclectic-bathroom.jpg"], ["created_at", "2019-05-13 02:23:50.155138"], ["updated_at", "2019-05-13 02:23:50.155138"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mAmenity Create (0.4ms)[0m  [1m[32mINSERT INTO "amenities" ("toilet", "bath", "location_id", "rating", "price", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["toilet", 1], ["bath", 0], ["location_id", 1], ["rating", 4], ["price", 2.0], ["image", "https://st.hzcdn.com/simgs/4471eb2602556915_8-0659/eclectic-bathroom.jpg"], ["created_at", "2019-05-13 02:23:50.157478"], ["updated_at", "2019-05-13 02:23:50.157478"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (9.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mAmenity Create (0.5ms)[0m  [1m[32mINSERT INTO "amenities" ("toilet", "bath", "location_id", "rating", "price", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["toilet", 1], ["bath", 0], ["location_id", 1], ["rating", 4], ["price", 2.0], ["image", "https://st.hzcdn.com/simgs/4471eb2602556915_8-0659/eclectic-bathroom.jpg"], ["created_at", "2019-05-13 02:23:50.168769"], ["updated_at", "2019-05-13 02:23:50.168769"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mAmenity Create (0.5ms)[0m  [1m[32mINSERT INTO "amenities" ("toilet", "bath", "shower", "location_id", "rating", "price", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["toilet", 1], ["bath", 1], ["shower", 1], ["location_id", 2], ["rating", 5], ["price", 100.0], ["image", "https://st.hzcdn.com/simgs/4471eb2602556915_8-0659/eclectic-bathroom.jpg"], ["created_at", "2019-05-13 02:23:50.171679"], ["updated_at", "2019-05-13 02:23:50.171679"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mAmenity Create (0.5ms)[0m  [1m[32mINSERT INTO "amenities" ("toilet", "bath", "shower", "baby", "location_id", "rating", "price", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["toilet", 1], ["bath", 1], ["shower", 1], ["baby", 1], ["location_id", 3], ["rating", 5], ["price", 10.0], ["image", "https://st.hzcdn.com/simgs/4471eb2602556915_8-0659/eclectic-bathroom.jpg"], ["created_at", "2019-05-13 02:23:50.174564"], ["updated_at", "2019-05-13 02:23:50.174564"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[36mBooking Load (1.0ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mBooking Create (1.0ms)[0m  [1m[32mINSERT INTO "bookings" ("timeIn", "timeOut", "amount", "amenities_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["timeIn", "10:00:00"], ["timeOut", "10:20:00"], ["amount", 4.0], ["amenities_id", 2], ["user_id", 1], ["created_at", "2019-05-13 02:23:50.192327"], ["updated_at", "2019-05-13 02:23:50.192327"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mBooking Create (0.5ms)[0m  [1m[32mINSERT INTO "bookings" ("timeIn", "timeOut", "amount", "amenities_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["timeIn", "11:00:00"], ["timeOut", "11:05:00"], ["amount", 2.0], ["amenities_id", 1], ["user_id", 2], ["created_at", "2019-05-13 02:23:50.196285"], ["updated_at", "2019-05-13 02:23:50.196285"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[36mBooking Create (0.5ms)[0m  [1m[32mINSERT INTO "bookings" ("timeIn", "timeOut", "amount", "amenities_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["timeIn", "13:00:00"], ["timeOut", "13:40:00"], ["amount", 400.0], ["amenities_id", 7], ["user_id", 3], ["created_at", "2019-05-13 02:23:50.199773"], ["updated_at", "2019-05-13 02:23:50.199773"]]
+  ↳ db/seeds.rb:34
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("timeIn", "timeOut", "amount", "amenities_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["timeIn", "09:15:00"], ["timeOut", "09:40:00"], ["amount", 30.0], ["amenities_id", 8], ["user_id", 5], ["created_at", "2019-05-13 02:23:50.202876"], ["updated_at", "2019-05-13 02:23:50.202876"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+Started GET "/" for ::1 at 2019-05-13 12:41:11 +1000
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ritikagoel/.rvm/gems/ruby-2.6.2/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ritikagoel/.rvm/gems/ruby-2.6.2/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ritikagoel/.rvm/gems/ruby-2.6.2/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (4.4ms)
+Completed 200 OK in 37ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2019-05-13 12:41:17 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:19
+  Rendered users/index.html.erb within layouts/application (38.1ms)
+Completed 200 OK in 868ms (Views: 839.5ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/locations" for ::1 at 2019-05-13 12:41:31 +1000
+Processing by LocationsController#index as HTML
+  Rendering locations/index.html.erb within layouts/application
+  [1m[36mLocation Load (1.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  ↳ app/views/locations/index.html.erb:21
+  Rendered locations/index.html.erb within layouts/application (33.4ms)
+Completed 200 OK in 71ms (Views: 43.9ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/bookings" for ::1 at 2019-05-13 12:41:38 +1000
+Processing by BookingsController#index as HTML
+  Rendering bookings/index.html.erb within layouts/application
+  [1m[36mBooking Load (1.0ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  ↳ app/views/bookings/index.html.erb:18
+  Rendered bookings/index.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 112ms (Views: 96.0ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/amenities" for ::1 at 2019-05-13 12:41:50 +1000
+Processing by AmenitiesController#index as HTML
+  Rendering amenities/index.html.erb within layouts/application
+  [1m[36mAmenity Load (1.0ms)[0m  [1m[34mSELECT "amenities".* FROM "amenities"[0m
+  ↳ app/views/amenities/index.html.erb:21
+  Rendered amenities/index.html.erb within layouts/application (23.7ms)
+Completed 200 OK in 53ms (Views: 36.4ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/amenities/1" for ::1 at 2019-05-13 12:42:02 +1000
+Processing by AmenitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAmenity Load (0.5ms)[0m  [1m[34mSELECT  "amenities".* FROM "amenities" WHERE "amenities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/amenities_controller.rb:67
+  Rendering amenities/show.html.erb within layouts/application
+  Rendered amenities/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 31ms (Views: 23.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/amenities/1/edit" for ::1 at 2019-05-13 12:42:05 +1000
+Processing by AmenitiesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAmenity Load (0.6ms)[0m  [1m[34mSELECT  "amenities".* FROM "amenities" WHERE "amenities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/amenities_controller.rb:67
+  Rendering amenities/edit.html.erb within layouts/application
+  Rendered amenities/_form.html.erb (41.1ms)
+  Rendered amenities/edit.html.erb within layouts/application (43.3ms)
+Completed 200 OK in 86ms (Views: 83.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/amenities" for ::1 at 2019-05-13 12:42:08 +1000
+Processing by AmenitiesController#index as HTML
+  Rendering amenities/index.html.erb within layouts/application
+  [1m[36mAmenity Load (0.6ms)[0m  [1m[34mSELECT "amenities".* FROM "amenities"[0m
+  ↳ app/views/amenities/index.html.erb:21
+  Rendered amenities/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 34ms (Views: 32.4ms | ActiveRecord: 0.6ms)
+
+

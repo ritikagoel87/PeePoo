@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Suburb:</strong>
+  <%= @location.suburb %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @location.street %>
+</p>
+
+<p>
+  <strong>House:</strong>
+  <%= @location.house %>
+</p>
+
+<p>
+  <strong>Typeofhouse:</strong>
+  <%= @location.typeOfHouse %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @location.description %>
+</p>
+
+<p>
+  <strong>Availablefrom:</strong>
+  <%= @location.availableFrom %>
+</p>
+
+<p>
+  <strong>Availableto:</strong>
+  <%= @location.availableTo %>
+</p>
+
+<p>
+  <strong>Availability:</strong>
+  <%= @location.availability %>
+</p>
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>

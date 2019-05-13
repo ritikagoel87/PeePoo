@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Locations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Suburb</th>
+      <th>Street</th>
+      <th>House</th>
+      <th>Typeofhouse</th>
+      <th>Description</th>
+      <th>Availablefrom</th>
+      <th>Availableto</th>
+      <th>Availability</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @locations.each do |location| %>
+      <tr>
+        <td><%= location.suburb %></td>
+        <td><%= location.street %></td>
+        <td><%= location.house %></td>
+        <td><%= location.typeOfHouse %></td>
+        <td><%= location.description %></td>
+        <td><%= location.availableFrom %></td>
+        <td><%= location.availableTo %></td>
+        <td><%= location.availability %></td>
+        <td><%= link_to 'Show', location %></td>
+        <td><%= link_to 'Edit', edit_location_path(location) %></td>
+        <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Location', new_location_path %>
