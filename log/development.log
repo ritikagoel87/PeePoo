@@ -327,3 +327,25 @@ Migrating to AddColumnPaymentToBookings (20190513034356)
   ↳ /Users/ritikagoel/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
   [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/ritikagoel/.rvm/gems/ruby-2.6.2/bin/annotate:23
+Started GET "/amenities" for ::1 at 2019-05-13 15:08:23 +1000
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ritikagoel/.rvm/gems/ruby-2.6.2/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by AmenitiesController#index as HTML
+  Rendering amenities/index.html.erb within layouts/application
+  [1m[36mAmenity Load (1.3ms)[0m  [1m[34mSELECT "amenities".* FROM "amenities"[0m
+  ↳ app/views/amenities/index.html.erb:21
+  Rendered amenities/index.html.erb within layouts/application (38.4ms)
+Completed 200 OK in 292ms (Views: 274.3ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/amenities" for ::1 at 2019-05-13 16:37:18 +1000
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ritikagoel/.rvm/gems/ruby-2.6.2/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by AmenitiesController#index as HTML
+  Rendering amenities/index.html.erb within layouts/application
+  [1m[36mAmenity Load (0.8ms)[0m  [1m[34mSELECT "amenities".* FROM "amenities"[0m
+  ↳ app/views/amenities/index.html.erb:21
+  Rendered amenities/index.html.erb within layouts/application (30.4ms)
+Completed 200 OK in 256ms (Views: 239.1ms | ActiveRecord: 8.9ms)
+
+
