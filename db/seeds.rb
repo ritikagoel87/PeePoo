@@ -7,11 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-u1 = User.create(:fname => 'Patricia', :lname => 'Nunes', :email => 'pat@ga.co', :password_digest => 'chicken', :admin => true, :owner => true)
-u2 = User.create(:fname => 'Ritika', :lname => 'Goel', :email => 'rit@ga.co', :password_digest => 'chicken', :admin => true, :owner => true)
-u3 = User.create(:fname => 'Mila', :lname => 'Svirina', :email => 'mil@ga.co', :password_digest => 'chicken', :admin => true, :owner => true)
-u4 = User.create(:fname => 'Owner', :lname => 'Owner', :email => 'owner@ga.co', :password_digest => 'chicken', :admin => false, :owner => true)
-u5 = User.create(:fname => 'User', :lname => 'User', :email => 'user@ga.co', :password_digest => 'chicken', :admin => false, :owner => false)
+u1 = User.create(:fname => 'Patricia', :lname => 'Nunes', :email => 'pat@ga.co', :password => 'chicken', :admin => true, :owner => true)
+u2 = User.create(:fname => 'Ritika', :lname => 'Goel', :email => 'rit@ga.co', :password => 'chicken', :admin => true, :owner => true)
+u3 = User.create(:fname => 'Mila', :lname => 'Svirina', :email => 'mil@ga.co', :password => 'chicken', :admin => true, :owner => true)
+u4 = User.create(:fname => 'Owner', :lname => 'Owner', :email => 'owner@ga.co', :password => 'chicken', :admin => false, :owner => true)
+u5 = User.create(:fname => 'User', :lname => 'User', :email => 'user@ga.co', :password => 'chicken', :admin => false, :owner => false)
 
 Location.destroy_all
 l1 = Location.create(:suburb => 'Sydney', :street => 'Market street', :house => '1/2', :typeOfHouse => 'unit', :description => 'Great and clean, please take the key from the reception', :availableFrom => '09:00:00', :availableTo => '17:00:00', :user_id => u4.id)
