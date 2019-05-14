@@ -17,4 +17,5 @@ class User < ApplicationRecord
   has_many :locations
   has_many :amenities, :through => :locations
   has_many :bookings
+  has_secure_password
 end
