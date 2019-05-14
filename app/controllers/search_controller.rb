@@ -5,7 +5,7 @@ class SearchController < ApplicationController
   def index
     # @amenities = Amenity.all
     if(params['toilet'].present?)
-      @amenities = Amenity.joins(location: :user).uniq
+      @amenities = Location.where(:suburb => 'Sydney').joins(:amenities).where('amenities.toilet = 1')
     end
 
     # Person.where('name LIKE ?', '%' + query + '%')
