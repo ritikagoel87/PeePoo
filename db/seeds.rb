@@ -29,7 +29,7 @@ a7 = Amenity.create(:toilet => 1, :bath => 1, :shower => 1, :location_id => l2.i
 a8 = Amenity.create(:toilet => 1, :bath => 1, :shower => 1, :baby => 1, :location_id => l3.id, :rating => 5, :price => 10.00, :image => 'https://st.hzcdn.com/simgs/4471eb2602556915_8-0659/eclectic-bathroom.jpg')
 
 Booking.destroy_all
-b1 = Booking.create(:timeIn => '10:00:00', :timeOut => '10:20:00', :amount => 4.00, :amenities_id => a2.id, :user_id => u1.id )
-b2 = Booking.create(:timeIn => '11:00:00', :timeOut => '11:05:00', :amount => 2.00, :amenities_id => a1.id, :user_id => u2.id )
-b3 = Booking.create(:timeIn => '13:00:00', :timeOut => '13:40:00', :amount => 400.00, :amenities_id => a7.id, :user_id => u3.id )
-b4 = Booking.create(:timeIn => '09:15:00', :timeOut => '09:40:00', :amount => 30.00, :amenities_id => a8.id, :user_id => u5.id )
+b1 = Booking.create(:timeIn => '10:00:00', :timeOut => '10:20:00', :amount => 4.00, :amenities_id => a2.id, :user_id => u1.id, :payment => true )
+b2 = Booking.create(:timeIn => '11:00:00', :timeOut => '11:05:00', :amount => 2.00, :amenities_id => a1.id, :user_id => u2.id, :payment => false )
+b3 = Booking.create(:timeIn => '13:00:00', :timeOut => '13:40:00', :amount => 400.00, :amenities_id => a7.id, :user_id => u3.id, :payment => true )
+b4 = Booking.create(:timeIn => '09:15:00', :timeOut => '09:40:00', :amount => 30.00, :amenities_id => a8.id, :user_id => u5.id, :payment => false )
