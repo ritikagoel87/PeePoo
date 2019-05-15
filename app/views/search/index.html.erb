@@ -11,7 +11,7 @@
       <th>Baby</th>
       <th>Location</th>
       <th>Rating</th>
-      <th>Price</th>
+      <th>Price (per 10 mins)</th>
       <th>Image</th>
       <th colspan="3"></th>
     </tr>
@@ -28,14 +28,9 @@
         <td><%= amenity.rating %></td>
         <td><%= amenity.price %></td>
         <td><%= amenity.image %></td>
-        <td><%= link_to 'Show', amenity %></td>
-        <td><%= link_to 'Edit', edit_amenity_path(amenity) %></td>
-        <td><%= link_to 'Destroy', amenity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Amenity', new_amenity_path %>
