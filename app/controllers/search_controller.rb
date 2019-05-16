@@ -3,12 +3,34 @@ class SearchController < ApplicationController
   # GET /amenities
   # GET /amenities.json
   def index
-    # @amenities = Amenity.all
+    amenitiesWhere = ''
+    locationsWhere = ''
     if(params['toilet'].present?)
-      @amenities = Location.where(:suburb => 'Sydney').joins(:amenities).where('amenities.toilet = 1')
+      amenitiesWhere += " AND " unless amenitiesWhere.empty?
+      amenitiesWhere += "toilet = #{params['toilet']}"
+    end
+    if(params['bath'].present?)
+      amenitiesWhere += " AND " unless amenitiesWhere.empty?
+      amenitiesWhere += "bath = #{params['bath']}"
+    end
+    if(params['shower'].present?)
+      amenitiesWhere += " AND " unless amenitiesWhere.empty?
+      amenitiesWhere += "shower = #{params['shower']}"
+    end
+    if(params['baby'].present?)
+      amenitiesWhere += " AND " unless amenitiesWhere.empty?
+      amenitiesWhere += "baby = #{params['baby']}"
+    end
+    if(params['suburb'].present?)
+      locationsWhere += " AND " unless locationsWhere.empty?
+      locationsWhere += "locations.suburb ilike '%#{params['suburb']}%'"
+    end
+    if(params['street'].present?)
+      locationsWhere += " AND " unless locationsWhere.empty?
+      locationsWhere += "locations.street ilike '%#{params['street']}%'"
     end
 
-    # Person.where('name LIKE ?', '%' + query + '%')
+    @amenities = Amenity.where(amenitiesWhere).joins(:location).where(locationsWhere)
   end
   #
   # # GET /amenities/1
