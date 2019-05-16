@@ -1,1 +1,1 @@
-json.array! @amenities, partial: 'amenities/amenity', as: :amenity
+json.array! @amenities, partial: 'search/amenity', as: :amenity

@@ -31,6 +31,9 @@ class SearchController < ApplicationController
     end
 
     @amenities = Amenity.where(amenitiesWhere).joins(:location).where(locationsWhere)
+    puts @amenities.count
+    puts Amenity.where(amenitiesWhere).joins(:location).where(locationsWhere).to_sql
+    render :json => @amenities
   end
   #
   # # GET /amenities/1
