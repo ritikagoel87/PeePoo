@@ -17,7 +17,7 @@
 #
 
 class Location < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, :optional => true
   has_many :amenities
   has_many :bookings, :through => :amenities
 end
