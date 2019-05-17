@@ -25,6 +25,7 @@ class BookingsController < ApplicationController
   # POST /bookings.json
   def create
     @booking = Booking.new(booking_params)
+    @booking.payment = params[:payment]
 
     respond_to do |format|
       if @booking.save
@@ -69,6 +70,6 @@ class BookingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def booking_params
-      params.require(:booking).permit(:timeIn, :timeOut, :amount, :amenities_id, :user_id)
+      params.require(:booking).permit(:timeIn, :timeOut, :amount, :amenities_id, :user_id, :payment)
     end
 end
